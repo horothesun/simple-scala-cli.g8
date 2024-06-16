@@ -6,3 +6,15 @@
 ## Setup
 
 Scala-CLI - IntelliJ IDEA setup: [guide](https://scala-cli.virtuslab.org/docs/cookbooks/ide/intellij/).
+
+## Run
+
+```bash
+scala-cli .
+```
+
+## Test (watch)
+
+```bash
+scala-cli test --watch .
+```
