@@ -24,14 +24,12 @@ jobs:
     timeout-minutes: 5
     steps:
     - uses: actions/checkout@v4
-
     - name: Generate project
       run: |
         sbt new file://../simple-scala-cli.g8 \
           --name="${G8_PARAM_REPO_NAME}" \
           --github_org="${G8_PARAM_GITHUB_ORG}" \
           --default_branch="${G8_PARAM_DEFAULT_BRANCH}"
-
     - name: Cache generated project
       uses: actions/cache@v4
       with:
@@ -45,16 +43,13 @@ jobs:
     timeout-minutes: 2
     steps:
     - uses: actions/checkout@v4
-
     - name: Get cached generated project
       uses: actions/cache@v4
       with:
         path: ${{ env.G8_PARAM_REPO_NAME }}
         key: ${{ github.sha }}
-
     - name: Setup act
       uses: actionsflow/setup-act@v1
-
     - name: GitHub workflows check
       env:
         ACT_PLATFORM: "ubuntu-latest=catthehacker/ubuntu:act-latest"
@@ -76,7 +71,8 @@ jobs:
         key: ${{ github.sha }}
     - uses: coursier/cache-action@v6
     - uses: VirtusLab/scala-cli-setup@v1
-    - run: |
+    - name: Scalafmt check
+      run: |
         cd "${G8_PARAM_REPO_NAME}"
         scala-cli fmt --check . || (
           echo "To format code run"
@@ -97,7 +93,8 @@ jobs:
         key: ${{ github.sha }}
     - uses: coursier/cache-action@v6
     - uses: VirtusLab/scala-cli-setup@v1
-    - run: |
+    - name: Run tests
+      run: |
         cd "${G8_PARAM_REPO_NAME}"
         scala-cli test .
 
@@ -113,7 +110,6 @@ jobs:
       with:
         path: ${{ env.G8_PARAM_REPO_NAME }}
         key: ${{ github.sha }}
-
     - name: Upload generated project
       uses: actions/upload-artifact@v4
       with:
@@ -123,19 +119,4 @@ jobs:
           !${{ env.G8_PARAM_REPO_NAME }}/.bsp
           !${{ env.G8_PARAM_REPO_NAME }}/.scala-build
         if-no-files-found: error
-
-  clean-cached-project:
-    name: Clean cached project
-    if: ${{ always() }}
-    needs: upload-generated-project
-    runs-on: ubuntu-latest
-    timeout-minutes: 1
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Clear cached project
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        gh extension install actions/gh-actions-cache
-        gh actions-cache delete "${GITHUB_SHA}" --confirm
+        retention-days: 5
