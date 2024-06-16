@@ -8,11 +8,11 @@ Giter8 template to generate a simple Scala-CLI project.
 
 ## Requirements
 
-- sbt ([install](https://www.scala-sbt.org/download.html)).
+- Scala-CLI [install](https://scala-cli.virtuslab.org/install).
 
 ## Generate new project
 
 ```bash
-sbt new horothesun/simple-scala-cli.g8
+scala-cli new horothesun/simple-scala-cli.g8
 cd <repo_name>
 ```
