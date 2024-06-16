@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [ $default_branch$ ]
+  pull_request:
+    branches: [ $default_branch$ ]
+
+concurrency:
+  group: \${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+    - uses: actions/checkout@v4
+    - uses: coursier/cache-action@v6
+    - uses: VirtusLab/scala-cli-setup@v1
+    - name: Run tests
+      run: scala-cli test .
+
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: coursier/cache-action@v6
+      - uses: VirtusLab/scala-cli-setup@v1
+      - name: Scalafmt check
+        run: |
+          scala-cli fmt --check . || (
+            echo "To format code run"
+            echo "  scala-cli fmt ."
+            exit 1
+          )
