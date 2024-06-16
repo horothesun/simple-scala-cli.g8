@@ -69,7 +69,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 1
     steps:
-    - uses: actions/checkout@v4
+    - name: Get cached generated project
+      uses: actions/cache@v4
+      with:
+        path: ${{ env.G8_PARAM_REPO_NAME }}
+        key: ${{ github.sha }}
     - uses: coursier/cache-action@v6
     - uses: VirtusLab/scala-cli-setup@v1
     - run: |
@@ -86,7 +90,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-    - uses: actions/checkout@v4
+    - name: Get cached generated project
+      uses: actions/cache@v4
+      with:
+        path: ${{ env.G8_PARAM_REPO_NAME }}
+        key: ${{ github.sha }}
     - uses: coursier/cache-action@v6
     - uses: VirtusLab/scala-cli-setup@v1
     - run: |
