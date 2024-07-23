@@ -1,6 +1,7 @@
 # Simple Scala-CLI template
 
-[![CI](https://github.com/horothesun/simple-scala-cli.g8/actions/workflows/ci.yml/badge.svg)](https://github.com/horothesun/simple-scala-cli.g8/actions/workflows/ci.yml)
+[![CI (Scala 3)](https://github.com/horothesun/simple-scala-cli.g8/actions/workflows/ci-scala-3.yml/badge.svg)](https://github.com/horothesun/simple-scala-cli.g8/actions/workflows/ci-scala-3.yml)
+[![CI (Scala 2.13)](https://github.com/horothesun/simple-scala-cli.g8/actions/workflows/ci-scala-213.yml/badge.svg)](https://github.com/horothesun/simple-scala-cli.g8/actions/workflows/ci-scala-213.yml)
 [![Scala](https://img.shields.io/badge/Scala-3%20%2F%202.13-%23DC322F?style=flat&labelColor=%23383838&logo=Scala&logoColor=%23DC322F&logoWidth=12&cacheSeconds=3600)](https://www.scala-lang.org/)
 [![CE3](https://img.shields.io/badge/Cats%20Effect-3-%23DC322F?style=flat&labelColor=%23383838&logo=Scala&logoColor=%23DC322F&logoWidth=12&cacheSeconds=3600)](https://typelevel.org/cats-effect/)
 

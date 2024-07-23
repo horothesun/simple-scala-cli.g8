@@ -1,4 +1,4 @@
-name: CI
+name: CI (Scala 2.13)
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
     - name: Generate project
       run: |
         sbt new file://../simple-scala-cli.g8 \
-          --use_scala_3=true \
+          --use_scala_3=false \
           --name="${G8_PARAM_REPO_NAME}" \
           --github_org="${G8_PARAM_GITHUB_ORG}" \
           --default_branch="${G8_PARAM_DEFAULT_BRANCH}"
@@ -114,7 +114,7 @@ jobs:
     - name: Upload generated project
       uses: actions/upload-artifact@v4
       with:
-        name: ${{ env.G8_PARAM_REPO_NAME }}
+        name: ${{ env.G8_PARAM_REPO_NAME }}-scala213
         path: |
           ${{ env.G8_PARAM_REPO_NAME }}/
           !${{ env.G8_PARAM_REPO_NAME }}/.bsp
