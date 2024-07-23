@@ -1,4 +1,4 @@
-//> using scala 3.4.2
+//> using scala $if(use_scala_3.truthy)$3.4.2$else$2.13.14$endif$
 //> using jvm temurin:21
 
 //> using dep org.typelevel::cats-core:2.12.0
@@ -15,7 +15,15 @@
 //> using test.dep org.typelevel::cats-effect-testkit:3.5.4
 //> using test.dep org.typelevel::discipline-munit:2.0.0
 
+$if(use_scala_3.truthy)$
 import cats.effect.*
 
 object Main extends IOApp.Simple:
   def run: IO[Unit] = IO.println("Hello!")
+$else$
+import cats.effect._
+
+object Main extends IOApp.Simple {
+  def run: IO[Unit] = IO.println("Hello!")
+}
+$endif$

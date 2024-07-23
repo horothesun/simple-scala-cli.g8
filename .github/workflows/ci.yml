@@ -27,6 +27,7 @@ jobs:
     - name: Generate project
       run: |
         sbt new file://../simple-scala-cli.g8 \
+          --use_scala_3=true \
           --name="${G8_PARAM_REPO_NAME}" \
           --github_org="${G8_PARAM_GITHUB_ORG}" \
           --default_branch="${G8_PARAM_DEFAULT_BRANCH}"
