@@ -1,4 +1,8 @@
-//> using scala $if(use_scala_3.truthy)$3.4.2$else$2.13.14$endif$
+$if(use_scala_3.truthy)$
+//> using scala 3.4.2
+$else$
+//> using scala 2.13.14
+$endif$
 //> using jvm temurin:21
 
 //> using dep org.typelevel::cats-core:2.12.0
