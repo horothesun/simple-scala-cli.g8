@@ -6,13 +6,11 @@ import org.scalacheck.Prop.forAll
 
 class UnitSuite extends ScalaCheckSuite:
 
-  test("1+1 is 2") {
+  test("1+1 is 2"):
     assertEquals(1 + 1, 2)
-  }
 
-  property("lists always have >= 0 elements") {
+  property("lists always have >= 0 elements"):
     forAll(listGen(Gen.alphaChar))(cs => assert(cs.length >= 0))
-  }
 
 object UnitSuite:
 
