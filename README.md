@@ -1,4 +1,4 @@
-# Simple Scala-CLI template 
+# Simple Scala-CLI template
 
 [![CI (Scala 3)](https://github.com/horothesun/simple-scala-cli.g8/actions/workflows/ci-scala-3.yml/badge.svg)](https://github.com/horothesun/simple-scala-cli.g8/actions/workflows/ci-scala-3.yml)
 [![CI (Scala 2.13)](https://github.com/horothesun/simple-scala-cli.g8/actions/workflows/ci-scala-213.yml/badge.svg)](https://github.com/horothesun/simple-scala-cli.g8/actions/workflows/ci-scala-213.yml)
