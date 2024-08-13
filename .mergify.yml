@@ -1,0 +1,24 @@
+pull_request_rules:
+
+- name: Automatically approve bot PRs
+  conditions: &base_merge_conditions
+  - check-success=generate-project
+  - check-success=gh-workflows-check
+  - check-success=scalafmt-check
+  - check-success=scala-cli-tests
+  - check-success=upload-generated-project
+  - or:
+    - author=horothesun-scala-steward[bot]
+    - author=horothesun-renovate[bot]
+  actions:
+    review:
+      type: APPROVE
+
+- name: Automatically merge bot PRs
+  conditions:
+  - and: *base_merge_conditions
+  - and:
+    - "#approved-reviews-by>=1"
+  actions:
+    merge:
+      method: squash
