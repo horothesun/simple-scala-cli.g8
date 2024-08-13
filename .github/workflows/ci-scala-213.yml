@@ -19,7 +19,7 @@ concurrency:
 jobs:
 
   generate-project:
-    name: Generate project
+    name: Generate project (Scala 2.13)
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -38,7 +38,7 @@ jobs:
         key: ${{ github.sha }}
 
   gh-workflows-check:
-    name: GitHub workflows check
+    name: GitHub workflows check (Scala 2.13)
     needs: generate-project
     runs-on: ubuntu-latest
     timeout-minutes: 2
@@ -60,7 +60,7 @@ jobs:
           xargs -n 1 -I ^ act --dryrun --platform "${ACT_PLATFORM}" -W ".github/workflows/^"
 
   scalafmt-check:
-    name: Scalafmt check
+    name: Scalafmt check (Scala 2.13)
     needs: generate-project
     runs-on: ubuntu-latest
     timeout-minutes: 1
@@ -82,7 +82,7 @@ jobs:
         )
 
   scala-cli-tests:
-    name: Run tests
+    name: Run tests (Scala 2.13)
     needs: generate-project
     runs-on: ubuntu-latest
     timeout-minutes: 2
@@ -100,7 +100,7 @@ jobs:
         scala-cli test .
 
   upload-generated-project:
-    name: Upload generated project
+    name: Upload generated project (Scala 2.13)
     if: github.ref == 'refs/heads/master'
     needs: [ gh-workflows-check, scalafmt-check, scala-cli-tests ]
     runs-on: ubuntu-latest

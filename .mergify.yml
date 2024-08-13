@@ -2,11 +2,16 @@ pull_request_rules:
 
 - name: Automatically approve bot PRs
   conditions: &base_merge_conditions
-  - check-success=generate-project
-  - check-success=gh-workflows-check
-  - check-success=scalafmt-check
-  - check-success=scala-cli-tests
-  - check-success=upload-generated-project
+  - check-success=Generate project (Scala 2.13)
+  - check-success=Generate project (Scala 3)
+  - check-success=GitHub workflows check (Scala 2.13)
+  - check-success=GitHub workflows check (Scala 3)
+  - check-success=Scalafmt check (Scala 2.13)
+  - check-success=Scalafmt check (Scala 3)
+  - check-success=Run tests (Scala 2.13)
+  - check-success=Run tests (Scala 3)
+  - check-success=Upload generated project (Scala 2.13)
+  - check-success=Upload generated project (Scala 3)
   - or:
     - author=horothesun-scala-steward[bot]
     - author=horothesun-renovate[bot]
