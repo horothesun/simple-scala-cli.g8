@@ -1,5 +1,5 @@
 $if(use_scala_3.truthy)$
-//> using scala 3.4.2
+//> using scala 3.4.3
 $else$
 //> using scala 2.13.14
 $endif$
