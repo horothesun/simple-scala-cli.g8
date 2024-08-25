@@ -1,11 +1,7 @@
-$if(use_scala_3.truthy)$
-//> using scala 3.5.0
-$else$
-//> using scala 2.13.14
+$if(use_scala_3.truthy)$//> using scala 3.5.0
+$else$//> using scala 2.13.14
 $endif$
-
-$if(use_scala_native.truthy)$
-//> using platform native
+$if(use_scala_native.truthy)$//> using platform native
 //> using nativeVersion 0.4.17
 
 //> using dep org.typelevel::cats-core_native0.4:2.11.0
@@ -23,8 +19,7 @@ $if(use_scala_native.truthy)$
 //> using test.dep org.typelevel::cats-laws_native0.4:2.11.0
 //> using test.dep org.typelevel::discipline-core_native0.4:1.6.0
 //> using test.dep org.typelevel::discipline-munit_native0.4:2.0.0-M3
-$else$
-//> using jvm temurin:21
+$else$//> using jvm temurin:21
 
 //> using dep org.typelevel::cats-core:2.12.0
 //> using dep org.typelevel::kittens:3.4.0
@@ -44,15 +39,12 @@ $else$
 //> using test.dep org.typelevel::discipline-munit:2.0.0
 $endif$
 
-$if(use_scala_3.truthy)$
-
-import cats.effect.*
+$if(use_scala_3.truthy)$import cats.effect.*
 
 object Main extends IOApp.Simple:
 
   def run: IO[Unit] = IO.println("Hello!")
-$else$
-import cats.effect._
+$else$import cats.effect._
 
 object Main extends IOApp.Simple {
 
