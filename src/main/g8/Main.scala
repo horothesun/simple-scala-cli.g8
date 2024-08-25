@@ -3,6 +3,7 @@ $if(use_scala_3.truthy)$
 $else$
 //> using scala 2.13.14
 $endif$
+
 $if(use_scala_native.truthy)$
 //> using platform native
 //> using nativeVersion 0.4.17
@@ -44,14 +45,18 @@ $else$
 $endif$
 
 $if(use_scala_3.truthy)$
+
 import cats.effect.*
 
 object Main extends IOApp.Simple:
+
   def run: IO[Unit] = IO.println("Hello!")
 $else$
 import cats.effect._
 
 object Main extends IOApp.Simple {
+
   def run: IO[Unit] = IO.println("Hello!")
+
 }
 $endif$
