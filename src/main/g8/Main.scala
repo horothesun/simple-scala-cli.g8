@@ -19,6 +19,7 @@ $endif$
 //> using test.dep org.typelevel::scalacheck-effect-munit:1.0.4
 //> using test.dep org.typelevel::cats-effect-testkit:3.5.4
 //> using test.dep org.typelevel::cats-laws:2.12.0
+//> using test.dep org.typelevel::discipline-core:1.7.0
 //> using test.dep org.typelevel::discipline-munit:2.0.0
 
 $if(use_scala_3.truthy)$
