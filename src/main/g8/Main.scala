@@ -19,6 +19,7 @@ $if(use_scala_native.truthy)$//> using platform native
 //> using test.dep org.typelevel::cats-laws_native0.4:2.11.0
 //> using test.dep org.typelevel::discipline-core_native0.4:1.6.0
 //> using test.dep org.typelevel::discipline-munit_native0.4:2.0.0-M3
+
 $else$//> using jvm temurin:21
 
 //> using dep org.typelevel::cats-core:2.12.0
@@ -37,8 +38,8 @@ $else$//> using jvm temurin:21
 //> using test.dep org.typelevel::cats-laws:2.12.0
 //> using test.dep org.typelevel::discipline-core:1.7.0
 //> using test.dep org.typelevel::discipline-munit:2.0.0
-$endif$
 
+$endif$
 $if(use_scala_3.truthy)$import cats.effect.*
 
 object Main extends IOApp.Simple:
