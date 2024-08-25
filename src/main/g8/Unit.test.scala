@@ -2,7 +2,7 @@ $if(use_scala_3.truthy)$
 import UnitSuite.*
 import munit.ScalaCheckSuite
 import org.scalacheck.Gen
-import org.scalacheck.Prop.forAll
+import org.scalacheck.Prop.*
 
 class UnitSuite extends ScalaCheckSuite:
 
@@ -19,7 +19,7 @@ $else$
 import UnitSuite._
 import munit.ScalaCheckSuite
 import org.scalacheck.Gen
-import org.scalacheck.Prop.forAll
+import org.scalacheck.Prop._
 
 class UnitSuite extends ScalaCheckSuite {
 
