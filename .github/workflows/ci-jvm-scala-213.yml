@@ -1,4 +1,4 @@
-name: CI (Scala 2.13)
+name: CI (JVM - Scala 2.13)
 
 on:
   push:
@@ -9,17 +9,17 @@ on:
 
 env:
   G8_PARAM_GITHUB_ORG: "octo-org"
-  G8_PARAM_REPO_NAME: "simple-scala-cli-scala213"
+  G8_PARAM_REPO_NAME: "simple-scala-cli-jvm-scala213"
   G8_PARAM_DEFAULT_BRANCH: "master"
 
 concurrency:
-  group: ${{ github.ref }}-scala213
+  group: ${{ github.ref }}-jvm-scala213
   cancel-in-progress: true
 
 jobs:
 
   generate-project:
-    name: Generate project (Scala 2.13)
+    name: Generate project (JVM - Scala 2.13)
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -28,6 +28,7 @@ jobs:
       run: |
         sbt new file://../simple-scala-cli.g8 \
           --use_scala_3=false \
+          --use_scala_native=false \
           --name="${G8_PARAM_REPO_NAME}" \
           --github_org="${G8_PARAM_GITHUB_ORG}" \
           --default_branch="${G8_PARAM_DEFAULT_BRANCH}"
@@ -38,7 +39,7 @@ jobs:
         key: ${{ github.sha }}
 
   gh-workflows-check:
-    name: GitHub workflows check (Scala 2.13)
+    name: GitHub workflows check (JVM - Scala 2.13)
     needs: generate-project
     runs-on: ubuntu-latest
     timeout-minutes: 2
@@ -60,7 +61,7 @@ jobs:
           xargs -n 1 -I ^ act --dryrun --platform "${ACT_PLATFORM}" -W ".github/workflows/^"
 
   scalafmt-check:
-    name: Scalafmt check (Scala 2.13)
+    name: Scalafmt check (JVM - Scala 2.13)
     needs: generate-project
     runs-on: ubuntu-latest
     timeout-minutes: 1
@@ -82,7 +83,7 @@ jobs:
         )
 
   scala-cli-tests:
-    name: Run tests (Scala 2.13)
+    name: Run tests (JVM - Scala 2.13)
     needs: generate-project
     runs-on: ubuntu-latest
     timeout-minutes: 2
@@ -100,7 +101,7 @@ jobs:
         scala-cli test .
 
   upload-generated-project:
-    name: Upload generated project (Scala 2.13)
+    name: Upload generated project (JVM - Scala 2.13)
     if: github.ref == 'refs/heads/master'
     needs: [ gh-workflows-check, scalafmt-check, scala-cli-tests ]
     runs-on: ubuntu-latest

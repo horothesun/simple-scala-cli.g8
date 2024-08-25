@@ -2,14 +2,22 @@ pull_request_rules:
 
 - name: Automatically approve bot PRs
   conditions: &base_merge_conditions
-  - status-success=Generate project (Scala 2.13)
-  - status-success=Generate project (Scala 3)
-  - status-success=GitHub workflows check (Scala 2.13)
-  - status-success=GitHub workflows check (Scala 3)
-  - status-success=Scalafmt check (Scala 2.13)
-  - status-success=Scalafmt check (Scala 3)
-  - status-success=Run tests (Scala 2.13)
-  - status-success=Run tests (Scala 3)
+  - status-success=Generate project (JVM - Scala 2.13)
+  - status-success=Generate project (JVM - Scala 3)
+  - status-success=Generate project (Native - Scala 2.13)
+  - status-success=Generate project (Native - Scala 3)
+  - status-success=GitHub workflows check (JVM - Scala 2.13)
+  - status-success=GitHub workflows check (JVM - Scala 3)
+  - status-success=GitHub workflows check (Native - Scala 2.13)
+  - status-success=GitHub workflows check (Native - Scala 3)
+  - status-success=Scalafmt check (JVM - Scala 2.13)
+  - status-success=Scalafmt check (JVM - Scala 3)
+  - status-success=Scalafmt check (Native - Scala 2.13)
+  - status-success=Scalafmt check (Native - Scala 3)
+  - status-success=Run tests (JVM - Scala 2.13)
+  - status-success=Run tests (JVM - Scala 3)
+  - status-success=Run tests (Native - Scala 2.13)
+  - status-success=Run tests (Native - Scala 3)
   - or:
     - author=horothesun-scala-steward[bot]
     - author=horothesun-renovate[bot]
