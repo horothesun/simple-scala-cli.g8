@@ -6,7 +6,7 @@
 ## Requirements
 
 - Scala-CLI [setup](https://scala-cli.virtuslab.org/install).
-$if(use_scala_native.truthy)$- Scala Native [enviroment setup](https://scala-native.org/en/stable/user/setup.html).
+$if(use_scala_native.truthy)$- Scala Native dependencies [setup](https://scala-native.org/en/stable/user/setup.html#installing-clang-and-runtime-dependencies).
 
 $else$
 
