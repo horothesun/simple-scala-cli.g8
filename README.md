@@ -13,7 +13,7 @@ Giter8 template to generate a simple Scala-CLI project.
 
 ## Requirements
 
-- Scala-CLI [install](https://scala-cli.virtuslab.org/install).
+- Scala-CLI ([install](https://scala-cli.virtuslab.org/install)).
 
 ## Generate new project
 
