@@ -7,8 +7,8 @@
 
 - Scala-CLI [setup](https://scala-cli.virtuslab.org/install).$if(use_scala_native.truthy)$
 - Scala Native [enviroment setup](https://scala-native.org/en/stable/user/setup.html).
-$else$
 $endif$
+
 ## Scala-CLI IDE setup
 
 Reference: [IntelliJ IDEA guide](https://scala-cli.virtuslab.org/docs/cookbooks/ide/intellij/)
