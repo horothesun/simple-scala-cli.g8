@@ -1,4 +1,4 @@
-$if(use_scala_3.truthy)$//> using scala 3.5.0
+$if(use_scala_3.truthy)$//> using scala 3.5.1
 $else$//> using scala 2.13.14
 $endif$
 $if(use_scala_native.truthy)$//> using platform native
