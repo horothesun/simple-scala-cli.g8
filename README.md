@@ -20,6 +20,5 @@ Giter8 template to generate a simple Scala-CLI-based project (JVM or Native).
 ```bash
 scala-cli new horothesun/simple-scala-cli.g8
 cd <repo_name>
-sbt scalafmtSbt scalafmt Test/scalafmt
 cat README.md
 ```
