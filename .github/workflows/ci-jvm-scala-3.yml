@@ -24,6 +24,7 @@ jobs:
     timeout-minutes: 5
     steps:
     - uses: actions/checkout@v4
+    - uses: sbt/setup-sbt@v1
     - name: Generate project
       run: |
         sbt new file://../simple-scala-cli.g8 \
