@@ -15,7 +15,7 @@ $if(use_scala_native.truthy)$//> using platform native
 //> using test.dep org.scalameta::munit-scalacheck_native0.4:1.0.0-M11
 //> using test.dep org.scalacheck::scalacheck_native0.4:1.17.1
 //> using test.dep org.typelevel::scalacheck-effect-munit_native0.4:2.0.0-M2
-//> using test.dep org.typelevel::cats-effect-testkit_native0.4:3.5.4
+//> using test.dep org.typelevel::cats-effect-testkit_native0.4:3.5.5
 //> using test.dep org.typelevel::cats-laws_native0.4:2.11.0
 //> using test.dep org.typelevel::discipline-core_native0.4:1.6.0
 //> using test.dep org.typelevel::discipline-munit_native0.4:2.0.0-M3
@@ -34,7 +34,7 @@ $else$//> using jvm temurin:21
 //> using test.dep org.scalameta::munit-scalacheck:1.0.0
 //> using test.dep org.scalacheck::scalacheck:1.18.0
 //> using test.dep org.typelevel::scalacheck-effect-munit:1.0.4
-//> using test.dep org.typelevel::cats-effect-testkit:3.5.4
+//> using test.dep org.typelevel::cats-effect-testkit:3.5.5
 //> using test.dep org.typelevel::cats-laws:2.12.0
 //> using test.dep org.typelevel::discipline-core:1.7.0
 //> using test.dep org.typelevel::discipline-munit:2.0.0
