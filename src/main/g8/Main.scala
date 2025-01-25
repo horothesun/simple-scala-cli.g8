@@ -1,5 +1,5 @@
-$if(use_scala_3.truthy)$//> using scala 3.6.2
-$else$//> using scala 2.13.15
+$if(use_scala_3.truthy)$//> using scala 3.6.3
+$else$//> using scala 2.13.16
 $endif$
 $if(use_scala_native.truthy)$//> using platform native
 //> using nativeVersion 0.4.17
@@ -31,11 +31,11 @@ $else$//> using jvm temurin:21
 //
 //> using test.dep org.scalameta::munit:1.0.3
 //> using test.dep org.typelevel::munit-cats-effect:2.0.0
-//> using test.dep org.scalameta::munit-scalacheck:1.0.0
+//> using test.dep org.scalameta::munit-scalacheck:1.1.0
 //> using test.dep org.scalacheck::scalacheck:1.18.1
 //> using test.dep org.typelevel::scalacheck-effect-munit:1.0.4
 //> using test.dep org.typelevel::cats-effect-testkit:3.5.7
-//> using test.dep org.typelevel::cats-laws:2.12.0
+//> using test.dep org.typelevel::cats-laws:2.13.0
 //> using test.dep org.typelevel::discipline-core:1.7.0
 //> using test.dep org.typelevel::discipline-munit:2.0.0
 //
