@@ -72,7 +72,7 @@ jobs:
       with:
         path: ${{ env.G8_PARAM_REPO_NAME }}
         key: ${{ github.sha }}
-    - uses: coursier/cache-action@v6
+    - uses: coursier/cache-action@v7
     - uses: VirtusLab/scala-cli-setup@v1
     - name: Scalafmt check
       run: |
@@ -94,7 +94,7 @@ jobs:
       with:
         path: ${{ env.G8_PARAM_REPO_NAME }}
         key: ${{ github.sha }}
-    - uses: coursier/cache-action@v6
+    - uses: coursier/cache-action@v7
     - uses: VirtusLab/scala-cli-setup@v1
     - name: Run tests
       run: |
